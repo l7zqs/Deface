@@ -1,0 +1,695 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/hacked" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+    <title>Hacked By T451N</title>
+    <link rel="icon" type="image/png" href="https://abs.twimg.com/emoji/v2/72x72/1f577.png">
+    <style>
+      body { 
+            margin: 50px;
+            padding: 0px;   
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center; 
+            overflow: hidden;
+            font-family: monospace;
+            color: #0f0;
+            user-select: none; /* Prevent Text Selection */
+        }
+       
+        .terminal-container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: #000000;
+            border: 2px solid rgba(0, 255, 0, 0.8);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: openTerminal 2s ease-out forwards;
+            opacity: 0;
+        }
+        .h1 {
+            font-family: 'HACKED', sans-serif;
+            color: #0f0;
+            text-align: center; /* Center the text horizontally */
+            margin-bottom: 20px; /* Space between the heading and terminal */
+            animation: glitch 2s infinite;
+        }
+        @keyframes glitch {
+        0% {
+          text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
+        }
+        25% {
+          text-shadow: -2px 2px #00ff00, 2px -2px #ff00ff;
+        }
+        50% {
+          text-shadow: 2px -2px #ffff00, -2px 2px #00ffff;
+        }
+        75% {
+          text-shadow: -2px -2px #ff0000, 2px 2px #0000ff;
+        }
+        100% {
+          text-shadow: 2px 2px #00ff00, -2px -2px #ff00ff;
+        }
+      }
+        @keyframes openTerminal {
+            0% {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+        .terminal-header {
+            background-color: #111;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+        .terminal-body {
+            padding: 20px;
+            color: rgba(0, 255, 0, 0.8);
+            line-height: 1.5;
+            height: 600px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .text-line {
+            opacity: 0;
+            animation:
+            typing 2s steps(30) forwards,
+            fadeIn 1s ease-in forwards;
+            
+        }
+
+        @keyframes fadeIn {
+          0% { opacity: 0;  /*transform: scale(0.9); */ }
+          100% { opacity: 1; /*transform: scale(1); */ }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .p2 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-align: center;
+            font-size: 10px; 
+        }   
+        .align{
+            color: rgb(0, 255, 0);
+            display: block;
+            height: 110px;
+            width: 400px;
+            font-size: 30px;
+            line-height: 40%;
+            float: right;
+        }
+        .but{
+            color: rgb(0, 255, 0);
+            background-color: transparent;
+            border: none;
+            font-size: 15px;
+            float: right;
+        }
+        .img{
+            float:left;
+            width: 20px;
+            height: 20px;
+            /* border-radius: 100%; */
+        }
+        .h1{
+            font-family: 'HACKED', sans-serif;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 0; /* Stays above the background but below content */
+        }
+        .text {
+          font-weight: 100;
+          font-size: 28px;
+          color: #00ff15;
+          font-family: Iceland;
+          text-shadow: 0 0 0.5em rgb(255, 255, 255), 0 0 0.5em rgb(249, 250, 250);
+  
+        }
+      .glitch {
+          color: #ff0000;
+        }
+        .logo {
+          width: 300px;
+          height: 300px;
+        }
+
+        @media (min-width: 1024px)  {
+          body {
+          margin: 5px;
+          
+         }
+          .terminal-body{
+            height: 67vh;
+            font-size: 12px;
+            overflow: hidden;
+          }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .terminal-container {
+                width: 90%;
+            }
+
+            .terminal-header {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .terminal-body {
+                padding: 15px;
+                height: 66vh;
+                font-size: 12px;
+            }
+
+            .but {
+                font-size: 12px;
+            }
+            .p2 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-align: center;
+            font-size: 5px;
+            }   
+            .align{
+            color: rgb(0, 255, 0);
+            display: block;
+            height: 80px;
+            width: 200px;
+            font-size: 35px;
+            line-height: 20%;
+            float: right;
+            }
+            .h1{
+                font-size: 30px; 
+            } 
+            .text {
+            font-weight: 100;
+            font-size: 25px;
+            color: #00ff15;
+            font-family: Iceland;
+            text-shadow: 0 0 0.5em rgb(255, 255, 255), 0 0 0.5em rgb(249, 250, 250);
+            }
+            .logo {
+            width: 200px;
+            height: 200px;
+            }
+        }
+        @media (min-width: 100px) and (max-width: 480px) {
+            body {
+            margin: 20px;   
+            }
+            .terminal-container {
+                width: 100%;
+            }
+
+            .terminal-header {
+                font-size: 10px;
+                padding: 6px;
+            }
+
+            .terminal-body {
+                height: 55vh;
+                font-size: 9px;
+            }
+
+            .but {
+                font-size: 9px;
+            }
+            .p2 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-align: center;
+            font-size: 3px;
+            color: rgb(0, 255, 0);
+            display: block;
+            float: right;
+            }   
+            .align{
+            height: 30px;
+            width: 150px;
+            font-size: 20px;
+            line-height: 21%;
+            }
+            .h1{
+                font-size: 19px;
+            }
+            .text {
+            font-weight: 100;
+            font-size: 15px;
+            color: #00ff15;
+            font-family: Iceland;
+            text-shadow: 0 0 0.5em rgb(255, 255, 255), 0 0 0.5em rgb(249, 250, 250);
+            }
+            .img{
+            float:left;
+            width: 15px;
+            height: 15px;
+            /* border-radius: 100%; */
+            }
+            .logo {
+            width: 100px;
+            height: 100px;
+            }
+        }
+
+.animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.animation-container span {
+  color: rgb(255, 0, 0);
+  display: block;
+  font-size: 18px;
+  font-family: Iceland;
+  text-shadow: 0 0 1px rgb(221, 55, 55);
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+  z-index: 10;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-timing-function: ease-out;
+  animation-name: move;
+}
+
+/*Moving merquee words*/
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* Fullscreen Loading Screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    background: rgba(0, 0, 0, 0.671);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; } /* Adjust opacity for blinking effect */
+    100% { opacity: 1; }
+}
+/* Green Box Around Loading */
+.loading-box {
+    border: 4px solid rgb(114, 209, 102);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: blink 0.20s infinite alternate;
+}
+/* Red Box Around Loading */
+.loading-box2 {
+    border: 4px solid rgb(255, 0, 0);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: blink 0.20s infinite alternate;
+}
+
+/* Loading Text */
+.loading-text {
+    font-family: 'Hack', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(202, 31, 31);
+    margin-bottom: 30px;
+}
+
+/* Progress Bar Container */
+.progress-bar {
+    width: 250px;
+    height: 20px;
+    border: 2px solid rgb(0, 255, 0);
+    background: rgba(0, 0, 0, 0.87);
+    overflow: hidden;
+}
+.progress-bar2 {
+    width: 250px;
+    height: 20px;
+    border: 2px solid rgb(0, 255, 0);
+    background: rgba(60, 255, 0, 0.87);
+    overflow: hidden;
+}
+/* Animated Progress */
+.progress {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    animation: loading 0.5s linear forwards;
+}
+.progress2 {
+    width: 0%;
+    height: 100%;
+    background: rgb(255, 0, 0);
+    animation: loading 0.5s linear forwards;
+}
+/* Loading Animation */
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+footer {
+    width: 100%;
+    font-size: 10px;
+    color: rgb(123, 255, 0);
+    text-align: center;
+    padding: 30px 0;
+    font-family: Hack;
+    text-shadow: 0 0 0.5em rgb(255, 255, 255), 0 0 0.5em rgb(249, 250, 250);
+}
+
+    </style>
+</head>
+
+<body oncontextmenu="return false;">
+  <!--New Loading Screen-->
+<div id="loading-screen">
+  <div class="loading-box2">
+      <p class="loading-text">⚠ Access Denied 🚫</p>
+      <div class="progress-bar2"> 
+          <div class="progress2"></div>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("loading-screen").innerHTML = `
+          <div class="loading-box">
+              <p class="loading-text">⚠ Opening Console 🕷</p>
+              <div class="progress-bar"> 
+                  <div class="progress"></div>
+              </div>
+          </div>
+      `;
+  });
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none";
+    }, 800); // Adjust time to match the animation duration
+});  
+</script>
+    <div class="overlay"></div>  
+    <!-- <h1 class="h1"> You are Hacked 🔥</h1> -->
+    <h1 class="h1">HACKED BY T451N</h1>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <image class="img" src="https://icon-library.com/images/terminal-icon/terminal-icon-4.jpg">
+            <span>Tost from T451N - terminal</span>
+            <a href="index2.html"><button class="but">&times;</button></a>
+            <a href="index2.html"><button class="but">&square;</button></a>
+            <a href="index2.html"><button class="but">&boxh;</button></a>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+            
+            <div class="align"> <p class="p2">          
+            <img class="logo" src="https://i.ibb.co.com/S70PBNkr/logo.jpg">
+    ███████╗██████╗ ██╗   ██╗      ██████╗ ███████╗██████╗ 
+    ██╔════╝██╔══██╗╚██╗ ██╔╝▄ ██╗▄██╔══██╗██╔════╝██╔══██╗
+    ███████╗██████╔╝ ╚████╔╝  ████╗██║  ██║█████╗  ██████╔╝
+    ╚════██║██╔═══╝   ╚██╔╝  ▀╚██╔▀██║  ██║██╔══╝  ██╔══██╗
+    ███████║██║        ██║     ╚═╝ ██████╔╝███████╗██║  ██║
+      ╚══════╝╚═╝        ╚═╝         ╚═════╝ ╚══════╝╚═╝  ╚═╝  
+                                        from SYSTEM ANONYMOUS BD
+    </p> </div>
+        </div><br>
+        <div padding="20px" align="center" class="text"></div> <br> 
+       <!-- <h1 padding="20px" align="center">HACKED BY ŜPÝ*WørrïørBD ㉿ŜPÝ*DER</h1> --> 
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    // Disable Right-Click
+    document.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+  
+    // Disable Text Selection
+    document.addEventListener("selectstart", function(event) {
+        event.preventDefault();
+    });
+
+    // Disable Copying (Ctrl+C, Ctrl+X, Ctrl+V, etc.)
+    document.addEventListener("keydown", function(event) {
+        if (event.ctrlKey && (event.key === "c" || event.key === "x" || event.key === "v" || event.key === "u")) {
+            event.preventDefault();
+        }
+    });
+});
+    </script>
+
+    <script>
+        const backgrounds = [
+            'https://gifdb.com/images/high/matrix-code-scary-face-loop-5tvidy2hcuzudzvb.webp',
+            'https://gifdb.com/images/high/matrix-code-hacking-binary-scalar-hqj7vegelavwt395.webp',
+            'https://i.gifer.com/133C.gif',
+            'https://gifdb.com/images/high/raining-soft-matrix-code-hb6iao1lji7py2ks.webp',
+            'https://i.giphy.com/12W5Sg2koWYnwA.webp',
+            'https://i.gifer.com/758a.gif',
+            'https://i.gifer.com/Nv2.gif',
+
+        ];
+        //Enhance image Loader//
+       backgrounds.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+        }); 
+
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+    </script> 
+
+    <script>
+        const terminalBody = document.getElementById('terminalBody');
+        const content = [
+            { text: 'We Are SYSTEM ANONYMOUS BD', color: 'lime' },
+            { text: 'Hello Admin/Guest!,', color: 'white' },
+            { text: '[HTTP_ACCEPT_ENCODING] => gzip, deflate', color: 'green' },
+            { text: '[HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.8', color: 'green' },
+            { text: '[SERVER_PROTOCOL] => HTTP/1.1', color: 'green' },
+            { text: '', color: 'white' },
+            { text: 'Array', color: 'magenta' },
+            { text: '{', color: 'magenta' },
+            { text: '    Your System has been hacked by T451N. ', color: 'red' },
+            { text: '    That\'s just WARNING For You! ', color: 'cyan' },
+            { text: '    You know that your SECURITY is still LACKING and there are many HOLES in your SYSTEM.', color: 'cyan' },
+            { text: '    Don\'t worry ADMIN, Your DATABASE is SAFE! Nothing deleted just changed the INDEX page.', color: 'cyan' },
+            { text: '    PATCH your SYSTEM otherwise we will be back soon! ', color: 'cyan' },
+            { text: '    We have no connection with terrorism.', color: 'red' },
+            { text: '    Nothing! SECURITY Is Perfect.', color: 'lime' },
+            { text: '}', color: 'magenta' },
+            { text: '', color: 'white' },
+            { text: '┌──(tasin㉿linux)-[~]', color: 'lime' },
+            { text: '└─$ whoami', color: 'lime' },
+            { text: '==> T451N', color: 'white' },
+            { text: '┌──(tasin㉿linux)-[~]', color: 'lime' },
+            { text: '└─$ su', color: 'lime' },
+            { text: '[sudo] password for root: ', color: 'white' },
+            { text: 'root@server ~# id', color: 'red' },
+            { text: 'uid=0(root) gid=0(root) groups=0(root)', color: 'white' },
+            { text: 'root@server ~# echo "done!"', color: 'red' },
+            { text: 'root@server ~# echo "Server Down!"', color: 'red' },
+            { text: 'dquote> We are Legion, We do not forgive, We do not forget, We do not forget, Expect us....', color: 'lime' },
+            { text: 'dquote> ctrl+c', color: 'lime' },
+            { text: 'root@server ~# exit ', color: 'red' },
+        ];
+    
+        let delay = 500; // Initial delay
+        content.forEach(({ text, color }, index) => {
+            setTimeout(() => {
+                const textLine = document.createElement('div'); 
+                 textLine.classList.add('text-line');
+                textLine.textContent = text;
+                textLine.style.color = color; // Set text color dynamically
+                terminalBody.appendChild(textLine);
+            }, delay);
+            delay += 500; // Increase time delay for the next line
+        });
+    </script>
+
+    <script>
+         class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!@#$%^&*()_-=+{}:"|<>?,./;'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="glitch">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+
+const phrases = [
+  'We Are SYSTEM ANONYMOUS BD.',
+  'Our crime is our curiosity.',
+  'Our crime is that of judging people by what they say and think, not what they look like.',
+  'Our crime is that of outsmarting you, something that you will never forgive us for.',
+  'We are hackers, and this is our manifesto.',
+  'You may stop this individual, but you cant stop us all...',
+  'After all, were all alike.',
+  'Do not understimate Bangladeshi Hackers',
+  <!--'Copyright 2025 ©️ ŜPÝ*WørrïørBD'-->
+]
+
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 1500)
+  })
+  counter = (counter + 1) % phrases.length
+}
+
+next()
+
+'use strict';
+
+var app = {
+  chars: ['ŜPÝ🕷WørrïørBD','ŜPÝ🕷DER','127.0.0.1','ŜPÝ🕷Wolf','0x523344',
+  'Localhost','ŜPÝ🕷ReVeN','HACKED!','Security','Breached!','System','🕷'],
+  
+  init: function () {
+    app.leftContainer = document.createElement('div');
+    app.leftContainer.className = 'animation-container left';
+    document.body.appendChild(app.leftContainer);
+
+    app.rightContainer = document.createElement('div');
+    app.rightContainer.className = 'animation-container right';
+    document.body.appendChild(app.rightContainer);
+
+    window.setInterval(app.add, 100);
+  },
+
+  add: function () {
+    var elementLeft = document.createElement('span');
+    var elementRight = document.createElement('span');
+
+    app.leftContainer.appendChild(elementLeft);
+    app.rightContainer.appendChild(elementRight);
+
+    app.animate(elementLeft, "left");
+    app.animate(elementRight, "right");
+  },
+
+  animate: function (element, side) {
+    var character = app.chars[Math.floor(Math.random() * app.chars.length)];
+    var duration = Math.floor(Math.random() * 15) + 1;
+    var offset = Math.floor(Math.random() * (50 - duration * 2)) + 3;
+    var size = 10 + (15 - duration);
+
+    element.style.cssText = `${side === "left" ? "left" : "right"}:${offset}vw; font-size:${size}px; animation-duration:${duration}s`;
+    element.innerHTML = character;
+
+    window.setTimeout(app.remove, duration * 1000, element);
+  },
+
+  remove: function (element) {
+    element.parentNode.removeChild(element);
+  },
+};
+document.addEventListener('DOMContentLoaded', app.init);
+    </script> 
+    
+     <footer>
+      &copy; 2025 SYSTEM ANONYMOUS BD. All rights reserved. 
+     </footer>
+</body>
+</html>
